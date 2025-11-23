@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Tyger</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=EB+Garamond:wght@400;500&family=Raleway:ital,wght@1,400&family=Oswald:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: black;
+    }
+
+    .forest-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("https://images.pexels.com/photos/167698/pexels-photo-167698.jpeg?cs=srgb&dl=pexels-lum3n-44775-167698.jpg&fm=jpg") no-repeat center center;
+      background-size: cover;
+      opacity: 0.35;
+      z-index: -2;
+    }
+
+    .tiger-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("https://png.pngtree.com/png-clipart/20230918/ourmid/pngtree-wild-roar---tiger-roaring-png-image_10140389.png") no-repeat center bottom;
+      background-size: contain;
+      opacity: 0.18;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    header {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 30px;
+      padding: 0 16px;
+    }
+
+    h1 {
+      font-family: "Cinzel", serif;
+      font-size: 4.5em;
+      font-weight: 800;
+      color: orange;
+      margin-bottom: 15px;
+      text-shadow:
+        -2px -2px 0 black,
+         2px -2px 0 black,
+        -2px  2px 0 black,
+         2px  2px 0 black;
+    }
+
+    .author {
+      font-family: "Raleway", sans-serif;
+      font-style: italic;
+      font-size: 1.8em;
+      color: orange;
+      margin-top: 0;
+      text-shadow:
+        -1px -1px 0 black,
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
+    }
+
+    .poem {
+      font-family: "EB Garamond", serif;
+      font-size: 1.2em;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 25px auto;
+    }
+
+    .highlight {
+      background-color: rgba(255, 140, 0, 0.4);
+      border-radius: 4px;
+      padding: 2px 4px;
+      font-family: "Oswald", sans-serif;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="forest-bg"></div>
+  <div class="tiger-bg"></div>
+
+  <header>
+    <h1>The Tyger</h1>
+    <p class="author">by William Blake</p>
+  </header>
+
+  <!-- Poem with selective highlights -->
+  <div class="poem">
+    <span class="highlight">Tyger</span> <span class="highlight">burning</span> bright,<br>
+    In the forests of the <span class="highlight">night</span>;<br>
+    What immortal hand or eye,<br>
+    Could frame thy fearful symmetry?
+  </div>
+
+  <div class="poem">
+    In what distant deeps or skies.<br>
+    <span class="highlight">fire</span> <span class="highlight">blazes</span> in thine eyes?<br>
+    On what <span class="highlight">Wings</span> dare he <span class="highlight">aspire</span>?<br>
+    What the hand, dare seize the fire?
+  </div>
+
+  <div class="poem">
+    And what shoulder, &amp; what art,<br>
+    Could twist the sinews of thy heart?<br>
+    And when thy heart began to beat,<br>
+    What dread hand? &amp; what dread feet?
+  </div>
+
+  <div class="poem">
+    What the <span class="highlight">hammer</span>? what the <span class="highlight">falls</span>,<br>
+    In what furnace was thy brain?<br>
+    What the <span class="highlight">chains</span>? what dread grasp,<br>
+    Dare its deadly <span class="highlight">break</span> clasp!
+  </div>
+
+  <div class="poem">
+    When the stars threw down their spears<br>
+    And water'd heaven with their tears:<br>
+    Did he smile his work to see?<br>
+    Did he who made the Lamb make thee?
+  </div>
+
+  <div class="poem">
+    Tyger burning bright,<br>
+    In the forests of the night:<br>
+    What immortal hand or eye,<br>
+    Dare frame thy fearful symmetry?
+  </div>
+</body>
+</html>
