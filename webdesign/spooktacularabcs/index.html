@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Spooktacular ABCs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Butcherman&family=Gamja+Flower&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --orange: #d93b18;
+        --green: #03a64a;
+        --purple: #6503a6;
+        --black: #111111;
+        --paper: #f7efe3;
+        --ink: #1a1a1a;
+        --gap: 8px;
+        --radius: 16px;
+      }
+
+      /* The OKLCH Colour System */
+      @supports (color: oklch(50% 0.1 200)) {
+        :root{
+          /* Matches your palette, now in OKLCH */
+          --orange: oklch(64% 0.17 35);   /* ~ #D93B18 */
+          --green:  oklch(60% 0.17 150);  /* ~ #03A64A */
+          --purple: oklch(48% 0.20 300);  /* ~ #6503A6 */
+          --black:  oklch(12% 0 0);       /* ~ #111111 */
+          --paper:  oklch(96% 0.03 95);   /* ~ #f7efe3 */
+          --ink:    oklch(20% 0 0);       /* ~ #1a1a1a */
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        background: var(--paper);
+        font-family: "Gamja Flower", sans-serif;
+        color: var(--ink);
+      }
+      .page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 16px;
+      }
+
+      /* From CSSGridBuilder (6x8) */
+      .parent {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        gap: var(--gap);
+        min-height: 100vh;
+      }
+
+      .div1 {
+        grid-column: span 6;
+        grid-row: span 3;
+      }
+      .div2 {
+        grid-row-start: 4;
+      }
+      .div3 {
+        grid-row-start: 4;
+      }
+      .div4 {
+        grid-row-start: 4;
+      }
+      .div5 {
+        grid-row-start: 4;
+      }
+      .div6 {
+        grid-row-start: 4;
+      }
+      .div7 {
+        grid-row-start: 4;
+      }
+      .div8 {
+        grid-row-start: 5;
+      }
+      .div9 {
+        grid-row-start: 5;
+      }
+      .div10 {
+        grid-row-start: 5;
+      }
+      .div11 {
+        grid-row-start: 5;
+      }
+      .div12 {
+        grid-row-start: 5;
+      }
+      .div13 {
+        grid-row-start: 5;
+      }
+      .div14 {
+        grid-row-start: 6;
+      }
+      .div15 {
+        grid-row-start: 6;
+      }
+      .div16 {
+        grid-row-start: 6;
+      }
+      .div17 {
+        grid-row-start: 6;
+      }
+      .div18 {
+        grid-row-start: 6;
+      }
+      .div19 {
+        grid-row-start: 6;
+      }
+      .div20 {
+        grid-row-start: 7;
+      }
+      .div21 {
+        grid-row-start: 7;
+      }
+      .div22 {
+        grid-row-start: 7;
+      }
+      .div23 {
+        grid-row-start: 7;
+      }
+      .div24 {
+        grid-row-start: 7;
+      }
+      .div25 {
+        grid-row-start: 7;
+      }
+      .div26 {
+        grid-row-start: 8;
+      }
+      .div27 {
+        grid-row-start: 8;
+      }
+      .div28 {
+        grid-column: span 4;
+        grid-row-start: 8;
+      }
+
+      /* Title */
+      .title-card {
+        background: var(--orange);
+        border-radius: var(--radius);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 30px 24px;
+        border: 8px dashed rgba(255, 255, 255, 0.7);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+      .title {
+        font-family: "Butcherman", system-ui;
+        font-size: clamp(3.2rem, 7vw, 5.2rem);
+        margin: 0;
+        line-height: 1;
+      }
+      .subtitle{
+        font-size:clamp(1.1rem,2.4vw,1.6rem);
+        margin:.5rem auto 0 auto;
+        color:#fff;
+        max-width: 500px;
+        text-align: center;
+      }
+
+      /* Letter Cards */
+      .card {
+        border-radius: var(--radius);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        border: 6px solid rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 1000px;
+        overflow: hidden;
+        position: relative;
+        min-height: 120px;
+      }
+      .c-orange {
+        background: var(--orange);
+        color: #fff;
+      }
+      .c-green {
+        background: var(--green);
+        color: #fff;
+      }
+      .c-purple {
+        background: var(--purple);
+        color: #fff;
+      }
+      .c-black {
+        background: var(--black);
+        color: #fff;
+      }
+
+      .flip {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.65s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .card input {
+        position: absolute;
+        opacity: 0;
+      }
+      .card input:checked + label .flip {
+        transform: rotateY(180deg);
+      }
+      .toggle {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .face {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backface-visibility: hidden;
+        text-align: center;
+        padding: 10px;
+      }
+      .front {
+        font-family: "Butcherman", system-ui;
+        font-size: clamp(2rem, 6vw, 4rem);
+      }
+      .back {
+        transform: rotateY(180deg);
+        font-family: "Gamja Flower", sans-serif;
+        font-size: clamp(1.4rem, 3vw, 1.8rem);
+        text-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Glowing Effect for Vowels */
+      .vowel .front {
+        animation: glow 2.2s ease-in-out infinite alternate;
+      }
+
+      /* Makes Vowels Bigger than Other Letters (AEIOUY)*/
+      .vowel .front {
+        font-size: clamp(4rem, 10vw, 8rem) !important;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+            0 0 20px rgba(255, 255, 255, 0.4);
+        }
+        to {
+          text-shadow: 0 0 25px rgba(255, 255, 255, 0.9),
+            0 0 50px rgba(255, 255, 255, 0.8);
+        }
+      }
+
+      /* Resources Section - Where I'm putting all the links to other ABC-learning websites */
+      .resources {
+        background: #fff;
+        color: var(--ink);
+        border-radius: var(--radius);
+        border: 6px dotted var(--purple);
+        padding: 18px 20px;
+        text-align: center;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      }
+      .resources h2 {
+        font-family: "Butcherman", system-ui;
+        color: var(--purple);
+        margin: 0 0 15px;
+        font-size: clamp(1.8rem, 3vw, 2.2rem);
+      }
+      .link-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .link-grid a {
+        background: var(--orange);
+        color: #fff;
+        text-decoration: none;
+        font-family: "Gamja Flower", sans-serif;
+        font-size: clamp(1.1rem, 2vw, 1.4rem);
+        border-radius: var(--radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        height: 100px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+        transition: transform 0.25s ease, box-shadow 0.25s ease,
+          background 0.25s ease;
+      }
+      .link-grid a:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        background: var(--black);
+      }
+
+      @media (max-width: 900px) {
+        .card {
+          min-height: 140px;
+        }
+        .link-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="parent">
+        <!-- Title -->
+        <section class="div1 title-card">
+          <h1 class="title">Spooktacular ABCs</h1>
+          <p class="subtitle">
+            Happy Halloween, young learners! Tap on a letter to flip the card
+            and discover a spooky surprise word. Try finding all the vowels
+            first — they’re extra magical this time of year! 👻✨
+          </p>
+        </section>
+
+        <!-- ROW 4: A B C D E F -->
+        <div class="div2 card c-orange vowel">
+          <input type="checkbox" id="A" />
+          <label for="A" class="toggle">
+            <div class="flip">
+              <div class="face front">A</div>
+              <div class="face back">Apple</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div3 card c-green">
+          <input type="checkbox" id="B" />
+          <label for="B" class="toggle">
+            <div class="flip">
+              <div class="face front">B</div>
+              <div class="face back">Bat</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div4 card c-purple">
+          <input type="checkbox" id="C" />
+          <label for="C" class="toggle">
+            <div class="flip">
+              <div class="face front">C</div>
+              <div class="face back">Cauldron</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div5 card c-black">
+          <input type="checkbox" id="D" />
+          <label for="D" class="toggle">
+            <div class="flip">
+              <div class="face front">D</div>
+              <div class="face back">Dracula</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div6 card c-orange vowel">
+          <input type="checkbox" id="E" />
+          <label for="E" class="toggle">
+            <div class="flip">
+              <div class="face front">E</div>
+              <div class="face back">Enchantment</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div7 card c-green">
+          <input type="checkbox" id="F" />
+          <label for="F" class="toggle">
+            <div class="flip">
+              <div class="face front">F</div>
+              <div class="face back">Frankenstein</div>
+            </div>
+          </label>
+        </div>
+
+        <!-- ROW 5: G H I J K L -->
+        <div class="div8 card c-purple">
+          <input type="checkbox" id="G" />
+          <label for="G" class="toggle">
+            <div class="flip">
+              <div class="face front">G</div>
+              <div class="face back">Ghost</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div9 card c-black">
+          <input type="checkbox" id="H" />
+          <label for="H" class="toggle">
+            <div class="flip">
+              <div class="face front">H</div>
+              <div class="face back">Haunted House</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div10 card c-orange vowel">
+          <input type="checkbox" id="I" />
+          <label for="I" class="toggle">
+            <div class="flip">
+              <div class="face front">I</div>
+              <div class="face back">Imp</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div11 card c-green">
+          <input type="checkbox" id="J" />
+          <label for="J" class="toggle">
+            <div class="flip">
+              <div class="face front">J</div>
+              <div class="face back">Jack O' Lantern</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div12 card c-purple">
+          <input type="checkbox" id="K" />
+          <label for="K" class="toggle">
+            <div class="flip">
+              <div class="face front">K</div>
+              <div class="face back">Kraken</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div13 card c-black">
+          <input type="checkbox" id="L" />
+          <label for="L" class="toggle">
+            <div class="flip">
+              <div class="face front">L</div>
+              <div class="face back">Lair - An Evil One</div>
+            </div>
+          </label>
+        </div>
+
+        <!-- ROW 6: M N O P Q R -->
+        <div class="div14 card c-orange">
+          <input type="checkbox" id="M" />
+          <label for="M" class="toggle">
+            <div class="flip">
+              <div class="face front">M</div>
+              <div class="face back">Mummy</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div15 card c-green">
+          <input type="checkbox" id="N" />
+          <label for="N" class="toggle">
+            <div class="flip">
+              <div class="face front">N</div>
+              <div class="face back">Night</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div16 card c-purple vowel">
+          <input type="checkbox" id="O" />
+          <label for="O" class="toggle">
+            <div class="flip">
+              <div class="face front">O</div>
+              <div class="face back">Ogre</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div17 card c-black">
+          <input type="checkbox" id="P" />
+          <label for="P" class="toggle">
+            <div class="flip">
+              <div class="face front">P</div>
+              <div class="face back">Pumpkin</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div18 card c-orange">
+          <input type="checkbox" id="Q" />
+          <label for="Q" class="toggle">
+            <div class="flip">
+              <div class="face front">Q</div>
+              <div class="face back">Queen</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div19 card c-green">
+          <input type="checkbox" id="R" />
+          <label for="R" class="toggle">
+            <div class="flip">
+              <div class="face front">R</div>
+              <div class="face back">Raven</div>
+            </div>
+          </label>
+        </div>
+
+        <!-- ROW 7: S T U V W X -->
+        <div class="div20 card c-purple">
+          <input type="checkbox" id="S" />
+          <label for="S" class="toggle">
+            <div class="flip">
+              <div class="face front">S</div>
+              <div class="face back">Skeleton</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div21 card c-black">
+          <input type="checkbox" id="T" />
+          <label for="T" class="toggle">
+            <div class="flip">
+              <div class="face front">T</div>
+              <div class="face back">Tombstone</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div22 card c-orange vowel">
+          <input type="checkbox" id="U" />
+          <label for="U" class="toggle">
+            <div class="flip">
+              <div class="face front">U</div>
+              <div class="face back">Unicorn</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div23 card c-green">
+          <input type="checkbox" id="V" />
+          <label for="V" class="toggle">
+            <div class="flip">
+              <div class="face front">V</div>
+              <div class="face back">Vampire</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div24 card c-purple">
+          <input type="checkbox" id="W" />
+          <label for="W" class="toggle">
+            <div class="flip">
+              <div class="face front">W</div>
+              <div class="face back">Witch</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div25 card c-black">
+          <input type="checkbox" id="X" />
+          <label for="X" class="toggle">
+            <div class="flip">
+              <div class="face front">X</div>
+              <div class="face back">X-Ray Bones</div>
+            </div>
+          </label>
+        </div>
+
+        <!-- ROW 8: Y Z + RESOURCES -->
+        <div class="div26 card c-orange vowel">
+          <input type="checkbox" id="Y" />
+          <label for="Y" class="toggle">
+            <div class="flip">
+              <div class="face front">Y</div>
+              <div class="face back">Yowl (Black Cat)</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="div27 card c-green">
+          <input type="checkbox" id="Z" />
+          <label for="Z" class="toggle">
+            <div class="flip">
+              <div class="face front">Z</div>
+              <div class="face back">Zombie</div>
+            </div>
+          </label>
+        </div>
+
+        <!-- Resource Section -->
+        <div class="div28 resources">
+          <h2>Less Spooky Ways to Learn Your ABCs:</h2>
+          <div class="link-grid">
+            <a href="https://www.starfall.com/h/abcs/" target="_blank"
+              >Starfall ABCs</a
+            >
+            <a href="https://pbskids.org" target="_blank">PBS Kids</a>
+            <a
+              href="https://www.abcya.com/games/talk_to_me_alphabet"
+              target="_blank"
+              >ABCya</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
