@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Twenty One Pilots</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Rubik+Glitch&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Rethink Sans", sans-serif;
+        background-color: #000;
+        color: #e0e0e0;
+        line-height: 1.6;
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        border-bottom: 2px solid #cc0000;
+        z-index: 1000;
+      }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        margin: 0 20px;
+      }
+      nav ul li a {
+        color: #f2f2f2;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      nav ul li a:hover {
+        color: #cc0000;
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+
+        /* Background with overlay */
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+          url("https://conc.art/files/2014/04/twenty_one_pilots_live_old_national_egyptian_room_indianapolis_2014-01.jpg")
+            no-repeat center center/cover;
+      }
+      .hero-title {
+        font-family: "Rubik Glitch", system-ui;
+        font-size: 5em;
+        color: #cc0000;
+        text-shadow: 2px 2px 6px black;
+      }
+
+      /* Section Headers */
+      h2 {
+        font-family: "Oswald", sans-serif;
+        font-size: 2em;
+        font-weight: 700;
+        color: #ffffff;
+        border-bottom: 2px solid #cc0000;
+        margin-top: 80px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      /* Section Containers */
+      section {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      /* Albums Section */
+      .album {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 40px;
+        background-color: #1a1a1a;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .album img {
+        width: 200px;
+        height: auto;
+        margin-right: 20px;
+        border: 2px solid #cc0000;
+      }
+      .album div {
+        flex: 1;
+      }
+
+      .tracklist {
+        columns: 3;                 /* forces 3 columns */
+        -webkit-columns: 3;
+        -moz-columns: 3;
+        margin-top: 10px;
+        padding-left: 20px;         /* indent under album title */
+        list-style-position: outside; /* keep numbers neat */
+        text-align: left;
+      }
+      .tracklist li {
+        margin-bottom: 5px;
+      }
+      /* Awards */
+      .award {
+        background-color: #1a1a1a;
+        border-left: 6px solid #cc0000;
+        margin: 30px auto;
+        padding: 25px;
+        border-radius: 8px;
+        max-width: 800px;
+      }
+
+      .award h3 {
+        font-size: 1.6em;
+        font-family: "Oswald", sans-serif;
+        margin-bottom: 10px;
+        color: #ffffff;
+      }
+
+      .award p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        color: #e0e0e0;
+      }
+
+
+
+      /* Tours Table */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table th, table td {
+        border: 1px solid #333;
+        padding: 10px;
+        text-align: left;
+      }
+      table th {
+        background-color: #cc0000;
+        color: #fff;
+      }
+      table td {
+        background-color: #1a1a1a;
+      }
+      .soldout {
+        color: #ff4444;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#albums">Albums</a></li>
+        <li><a href="#awards">Awards & Achievements</a></li>
+        <li><a href="#tours">Tours</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <h1 class="hero-title">TWENTY ONE PILOTS</h1>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        Twenty One Pilots is an American musical duo from Columbus, Ohio. The
+        band was founded in 2009 by Tyler Joseph along with Nick Thomas and
+        Chris Salih; by 2011, those original members departed and Josh Dun
+        joined, forming the current lineup.
+      </p>
+      <p>
+        They signed with Fueled by Ramen in 2012 and released their first
+        label-backed album, <em>Vessel</em>, in 2013, which helped them break
+        into the mainstream. Their 2015 album <em>Blurryface</em> propelled them
+        even further, featuring the hit “Stressed Out,” which became their first
+        chart-topping single.
+      </p>
+      <p>
+        Known for their energetic live performances, conceptual storytelling,
+        and deeply personal lyrics, the duo blends alternative rock, hip hop,
+        electropop, and indie influences. They sometimes describe their sound as
+        “schizophrenic pop” to reflect this diversity. Their dedicated fanbase,
+        known as the Skeleton Clique, has become one of the most passionate
+        communities in modern music.
+      </p>
+    </section>
+
+    <!-- Albums Section -->
+    <section id="albums">
+      <h2>Albums</h2>
+      <!-- Album: Twenty One Pilots -->
+      <div class="album">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/af/Twenty_One_Pilots_album_cover.png" alt="Twenty One Pilots Album">
+        <div>
+          <h3>Twenty One Pilots (2009)</h3>
+          <ol class="tracklist">
+            <li>Implicit Demand for Proof</li>
+            <li>Fall Away</li>
+            <li>The Pantaloon</li>
+            <li>Addict with a Pen</li>
+            <li>Friend, Please</li>
+            <li>March to the Sea</li>
+            <li>Johnny Boy</li>
+            <li>Oh, Ms. Believer</li>
+            <li>Air Catcher</li>
+            <li>Trapdoor</li>
+            <li>A Car, a Torch, a Death</li>
+            <li>Taxi Cab</li>
+            <li>Before You Start Your Day</li>
+            <li>Isle of Flightless Birds</li>
+          </ol>
+        </div>
+      </div>
+      <!-- Album: Regional At Best -->
+       <div class="album">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Regional_at_Best.png" alt="Regional at Best">
+        <div>
+          <h3>Regional at Best (2011)</h3>
+          <ol class="tracklist">
+            <li>Guns For Hands</li>
+            <li>Holding On To You</li>
+            <li>Ode To Sleep</li>
+            <li>Slowtown</li>
+            <li>Car Radio</li>
+            <li>Forest</li>
+            <li>Glowing Eyes</li>
+            <li>Kitchen Sink</li>
+            <li>Anathema</li>
+            <li>Lovely</li>
+            <li>Ruby</li>
+            <li>Trees</li>
+            <li>Be Concerned</li>
+            <li>Clear</li>
+          </ol>
+        </div>
+      </div>
+      <!-- Album: Vessel --> 
+      <div class="album">
+        <img src="https://upload.wikimedia.org/wikipedia/en/0/0f/Twenty_One_Pilots_-_Vessel.png" alt="Vessel">
+        <div>
+          <h3>Vessel (2013)</h3>
+          <ol class="tracklist">
+            <li>Ode to Sleep</li>
+            <li>Holding on to You</li>
+            <li>Migraine</li>
+            <li>House of Gold</li>
+            <li>Car Radio</li>
+            <li>Semi-Automatic</li>
+            <li>Screen</li>
+            <li>The Run and Go</li>
+            <li>Fake You Out</li>
+            <li>Guns for Hands</li>
+            <li>Trees</li>
+            <li>Truce</li>
+          </ol>
+        </div>
+      </div>
+      <!-- Album: Blurryface --> 
+       <div class="album">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Blurryface_by_Twenty_One_Pilots.png" alt="Blurryface">
+        <div>
+          <h3>Blurryface (2015)</h3>
+          <ol class="tracklist">
+            <li>Heavydirtysoul</li>
+            <li>Stressed Out</li>
+            <li>Ride</li>
+            <li>Fairly Local</li>
+            <li>Tear In My Heart</li>
+            <li>Lane Boy</li>
+            <li>The Judge</li>
+            <li>Doubt</li>
+            <li>Polarize</li>
+            <li>We Don't Believe What's On TV</li>
+            <li>Message Man</li>
+            <li>Hometown</li>
+            <li>Not Today</li>
+            <li>Goner</li>
+          </ol>
+        </div>
+      </div>
+      <!-- Album: Trench --> 
+       <div class="album">
+        <img src="https://upload.wikimedia.org/wikipedia/en/f/f3/Trench_Twenty_One_Pilots.png" alt="Trench">
+        <div>
+          <h3>Trench (2018)</h3>
+          <ol class="tracklist">
+            <li>Jumpsuit</li>
+            <li>Levitate</li>
+            <li>Morph</li>
+            <li>My Blood</li>
+            <li>Chlorine</li>
+            <li>Smithereens</li>
+            <li>Neon Gravestones</li>
+            <li>The Hype</li>
+            <li>Nico And The Niners</li>
+            <li>Cut My Lip</li>
+            <li>Bandito</li>
+            <li>Pet Cheetah</li>
+            <li>Legend</li>
+            <li>Leave The City</li>
+          </ol>
+        </div>
+      </div>
+      <!-- Album: Scaled and Icy --> 
+       <div class="album">
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/52/Twenty_One_Pilots_-_Scaled_and_Icy.png" alt="Scaled and Icy">
+        <div>
+          <h3>Scaled and Icy (2021)</h3>
+          <ol class="tracklist">
+            <li>Good Day</li>
+            <li>Choker</li>
+            <li>Shy Away</li>
+            <li>The Outside</li>
+            <li>Saturday</li>
+            <li>Never Take It</li>
+            <li>Mulberry Street</li>
+            <li>Formidable</li>
+            <li>Bounce Man</li>
+            <li>No Chances</li>
+            <li>Redecorate</li>
+          </ol>
+        </div>
+      </div>
+      <!-- Album: Clancy --> 
+       <div class="album">
+        <img src="https://upload.wikimedia.org/wikipedia/en/d/db/Twenty_One_Pilots_-_Clancy.png" alt="Clancy">
+        <div>
+          <h3>Clancy (2025)</h3>
+          <ol class="tracklist">
+            <li>Overcompensate</li>
+            <li>Next Semester</li>
+            <li>Backslide</li>
+            <li>Midwest Indigo</li>
+            <li>Routines in the Night</li>
+            <li>Vignette</li>
+            <li>The Craving</li>
+            <li>Lavish</li>
+            <li>Navigating</li>
+            <li>Snap Back</li>
+            <li>Oldies Station</li>
+            <li>At the Risk of Feeling Dumb</li>
+            <li>Paladin Strait</li>
+          </ol>
+        </div>
+      </div>
+      <!-- Album: Breach --> 
+       <div class="album">
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/5a/Twenty_One_Pilots_-_Breach.png" alt="Breach">
+        <div>
+          <h3>Breach (2025)</h3>
+          <ol class="tracklist">
+            <li>City Walls</li>
+            <li>RAWFEAR</li>
+            <li>Drum Show</li>
+            <li>Garbage</li>
+            <li>The Contract</li>
+            <li>Downstairs</li>
+            <li>Robot Voices</li>
+            <li>Center Mass</li>
+            <li>Cottonwood</li>
+            <li>One Way</li>
+            <li>Days Lie Dormant</li>
+            <li>Tally</li>
+            <li>Intentions</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards & Achievements Section -->
+    <section id="awards">
+      <h2>Awards & Achievements</h2>
+
+      <div class="award">
+        <h3>GRAMMY Awards</h3>
+        <p>Won Best Pop Duo/Group Performance for “Stressed Out” at the 59th GRAMMY Awards (2017).</p>
+      </div>
+
+      <div class="award">
+        <h3>American Music Awards</h3>
+        <p>Favorite Duo/Group - Pop/Rock (2016) </p>
+        <p>Favorite Artist - Alternative Rock (2016) </p>
+        <p>Favorite Rock Artist (2025) </p>
+        <p>Favorite Rock Album for “Clancy” (2025)</p>
+      </div>
+
+      <div class="award">
+        <h3>Billboard Music Awards</h3>
+        <p>Named Top Rock Artist (2015) </p>
+        <p>“Blurryface” won Top Rock Album (2015) </p>
+      </div>
+
+      <div class="award">
+        <h3>iHeartRadio Music Awards</h3>
+        <p>Alternative Rock Artist of the Year (2015) </p>
+        <p>Alternative Rock Song (“Stressed Out”) (2015) </p>
+        <p>Best Duo/Group of the Year (2015)</p>
+      </div>
+
+      <div class="award">
+        <h3>Kerrang! Awards</h3>
+        <p>Best Fanbase: The Skeleton Clique</p>
+      </div>
+
+      <div class="award">
+        <h3>MTV Awards</h3>
+        <p>Best Rock Video at the MTV Video Music Awards for "Heathens." </p>
+        <p>Picked up wins at MTV Europe Music Awards for Best Alternative.</p>
+      </div>
+    </section>
+
+
+    <!-- Tours Section -->
+    <section id="tours">
+      <h2>Clancy x Breach World Tour</h2>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>City</th>
+          <th>Venue</th>
+          <th>Status</th>
+        </tr>
+        <tr><td>Sep. 30, 2025</td><td>Hartford, CT</td><td>Xfinity Theatre</td><td class="soldout">Sold Out</td></tr>
+        <tr><td>Oct. 1, 2025</td><td>Bangor, ME</td><td>Maine Savings Amphitheater</td><td class="soldout">Sold Out</td></tr>
+        <tr><td>Oct. 4, 2025</td><td>Wantagh, NY</td><td>Northwell Health at Jones Beach Theater</td><td class="soldout">Sold Out</td></tr>
+        <tr><td>Oct. 5, 2025</td><td>Bristow, VA</td><td>Jiffy Lube Live</td><td class="soldout">Sold Out</td></tr>
+        <tr><td>Oct. 7, 2025</td><td>Virginia Beach, VA</td><td>Veterans United Home Loans Amphitheater</td><td class="soldout">Sold Out</td></tr>
+        <tr><td>Oct. 8, 2025</td><td>Charlotte, NC</td><td>PNC Music Pavilion</td><td>Tickets</td></tr>
+        <tr><td>Oct. 10, 2025</td><td>West Palm Beach, FL</td><td>iTHINK Financial Amphitheatre</td><td>Tickets</td></tr>
+        <tr><td>Oct. 11, 2025</td><td>Tampa, FL</td><td>MIDFLORIDA Credit Union Amphitheatre</td><td class="soldout">Sold Out</td></tr>
+        <tr><td>Oct. 14, 2025</td><td>Orange Beach, AL</td><td>The Wharf Amphitheater</td><td>Tickets</td></tr>
+        <tr><td>Oct. 15, 2025</td><td>Alpharetta, GA</td><td>Ameris Bank Amphitheatre</td><td class="soldout">Sold Out</td></tr>
+        <tr><td>Oct. 17, 2025</td><td>Birmingham, AL</td><td>Coca-Cola Amphitheater</td><td class="soldout">Sold Out</td></tr>
+        <tr><td>Oct. 19, 2025</td><td>Rogers, AR</td><td>Walmart AMP</td><td class="soldout">Sold Out</td></tr>
+        <tr><td>Oct. 20, 2025</td><td>Dallas, TX</td><td>Dos Equis Pavilion</td><td class="soldout">Sold Out</td></tr>
+        <tr><td>Oct. 23, 2025</td><td>Chula Vista, CA</td><td>North Island Credit Union Amphitheatre</td><td>Tickets</td></tr>
+        <tr><td>Oct. 25, 2025</td><td>Los Angeles, CA</td><td>BMO Stadium</td><td class="soldout">Sold Out</td></tr>
+        <tr><td>Oct. 26, 2025</td><td>Los Angeles, CA</td><td>BMO Stadium</td><td>Tickets</td></tr>
+        <tr><td>Feb. 21, 2026</td><td>Tempe, AZ</td><td>Innings Festival Arizona</td><td>Tickets</td></tr>
+        <tr><td>Jun. 19-21, 2026</td><td>Neuhausen Ob Eck, Germany</td><td>Southside Festival</td><td>Tickets</td></tr>
+        <tr><td>Jun. 19-21, 2026</td><td>Scheeßel, Germany</td><td>Hurricane Festival</td><td>Tickets</td></tr>
+      </table>
+    </section>
+  </body>
+</html>
