@@ -1,0 +1,257 @@
+<!-- AI was used in the production of this project. Shiloh Williamson. November 2025 -->
+
+<!-- 
+  PROJECT BRIEF/EXPLANATION OF MY IDEA/THOUGHTS: I got a little bit of a late start on this project, partly because I was so busy this weekend with the 48 Hour Film Challenge. But that experience inspired me to use the weekend’s schedule for Part 1 of this project. I wanted to emulate the frantic, hectic nature of that experience—it was a phenomenal time in the end despite the stress—and to do so I made several design choices. First, I drew from the color palette I used in my Twenty One Pilots single-page website design because it carried a similar energy and intensity that I wanted to recreate here. Second, I decided to include a timer countdown to reflect the real-time crunch of the challenge. I already knew how to create glowing and bold text effects from previous projects, but I used W3Schools and AI to help fine-tune and animate the countdown for this page.
+-->
+
+<!-- All code that was generated with the use of outside resources or AI will be properly cited below. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>48-Hour Film Challenge Schedule</title>
+
+    <!-- Countdown + FILM CHALLENGE SCHEDULE font (Orbitron from Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Text in the table font (Rajdhani from Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        margin: 0;
+        font-family: "Rajdhani", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        padding-top: 60px;
+      }
+
+      /* COUNTDOWN */
+      .timer {
+        font-family: "Orbitron", sans-serif;
+        font-size: 5.5rem;
+        color: red;
+        text-shadow: 0 0 25px red, 0 0 55px red;
+        animation: pulse 1.2s infinite alternate;
+        text-align: center;
+        margin-bottom: 0;
+        white-space: nowrap;
+        width: 75%;
+      }
+
+      @keyframes pulse {
+        from {
+          text-shadow: 0 0 15px red, 0 0 35px red;
+        }
+        to {
+          text-shadow: 0 0 60px #ff5555, 0 0 100px #ff0000;
+        }
+      }
+
+      .subtitle {
+        font-family: "Orbitron", sans-serif;
+        font-size: 4rem;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin-top: 5px;
+        margin-bottom: 60px;
+        width: 75%;
+        white-space: nowrap;
+        text-align: center;
+        padding-right: 5%;
+        margin-left: 3%;
+      }
+
+      /* Table styling */
+      table {
+        width: 75%;
+        border-collapse: collapse;
+        margin-bottom: 50px;
+        font-size: 1.2rem;
+        color: #fff;
+        text-align: center;
+      }
+
+      th,
+      td {
+        border: 1px solid #444;
+        padding: 10px;
+      }
+
+      th {
+        background-color: rgba(255, 0, 0, 0.3);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      tr:nth-child(even) {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      tr:hover {
+        background-color: rgba(255, 0, 0, 0.25);
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      h2 {
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: #ff6666;
+        margin-bottom: 10px;
+        font-size: 3.2rem;
+        width: 75%;
+      }
+
+      .disclaimer {
+        width: 75%;
+        text-align: left;
+        font-size: 1.1rem;
+        color: #fff;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-family: "Rajdhani", sans-serif;
+        opacity: 0.85;
+      }
+
+      /* Styles for the SharePoint link at the bottom */
+      a {
+        display: block;
+        text-align: center;
+        font-family: "Rajdhani", sans-serif;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #ff4444;
+        width: fit-content;
+        margin: 30px auto 80px auto;
+        opacity: 0.9;
+      }
+
+      a:hover {
+        color: #ff4444;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Countdown and subtitle -->
+    <div class="timer" id="countdown">48 HRS 00 MIN 00 SEC</div>
+    <div class="subtitle">Film Challenge Schedule</div>
+
+    <!-- Countdown acceleration (3 minutes total runtime). For reference, I used this tutoral from w3schools: https://www.w3schools.com/howto/howto_js_countdown.asp to create a countdown timer using javascript but it was only ticking in real time from 48 hours. I didn't think this would showcase the franticness that defined this challenge so I used AI to accelerate the timer.   -->
+    <script>
+      let totalSeconds = 48 * 60 * 60;
+      const countdownDuration = 180;
+      const step = totalSeconds / countdownDuration;
+
+      function updateTimer() {
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = Math.floor(totalSeconds % 60);
+
+        const formattedTime =
+          String(hours).padStart(2, "0") +
+          " HRS " +
+          String(minutes).padStart(2, "0") +
+          " MIN " +
+          String(seconds).padStart(2, "0") +
+          " SEC";
+
+        document.getElementById("countdown").textContent = formattedTime;
+
+        if (totalSeconds > 0) {
+          totalSeconds -= step;
+        } else {
+          clearInterval(timerInterval);
+          document.getElementById("countdown").textContent =
+            "00 HRS 00 MIN 00 SEC";
+        }
+      }
+
+      updateTimer();
+      const timerInterval = setInterval(updateTimer, 100);
+    </script>
+
+    <!-- Friday Info -->
+    <h2>Friday – Pre-Production</h2>
+    <table>
+      <tr><th>Time</th><th>Task</th></tr>
+      <tr><td>4:00 PM</td><td>Challenge Kickoff & Reveal of Challenge Requirements</td></tr>
+      <tr><td>4:30 PM</td><td>Arrive at Carly’s House with Austin and the Equipment</td></tr>
+      <tr><td>5:00 PM</td><td>Reviewing Requirements, Ideation, Loglines & Beat Sheets</td></tr>
+      <tr><td>7:30 PM</td><td>Scriptwriting – Draft #1</td></tr>
+      <tr><td>8:00 PM</td><td>Going to Target for Costume/Prop Shopping</td></tr>
+      <tr><td>9:30 PM</td><td>Scriptwriting – Draft #2</td></tr>
+      <tr><td>11:30 PM</td><td>Developing a Shotlist</td></tr>
+      <tr><td>12:30 AM</td><td>Dressing Rooms for Production</td></tr>
+      <tr><td>2:00 AM</td><td>Scriptwriting – Draft #3</td></tr>
+      <tr><td>3:00 AM</td><td>Sleep</td></tr>
+    </table>
+
+    <!-- Saturday Info -->
+    <h2>Saturday – Production</h2>
+    <table>
+      <tr><th>Time</th><th>Task</th></tr>
+      <tr><td>9:00 AM</td><td>Wake Up</td></tr>
+      <tr><td>10:00 AM</td><td>Arrive back at Carly’s</td></tr>
+      <tr><td>10:30 AM</td><td>Setting Up Equipment</td></tr>
+      <tr><td>10:45 AM</td><td>THE TASCAM DOESN’T WORK</td></tr>
+      <tr><td>11:30 AM</td><td>On YouTube, Reviewing Tascam How-To’s</td></tr>
+      <tr><td>12:30 PM</td><td>Update: It’s STILL broken</td></tr>
+      <tr><td>2:00 PM</td><td>THE TASCAM WORKS!</td></tr>
+      <tr><td>2:30 PM</td><td>Production: Interior Scenes</td></tr>
+      <tr><td>7:30 PM</td><td>Production: Exterior Scenes 1</td></tr>
+      <tr><td>9:30 PM</td><td>Production: Montage Scenes</td></tr>
+      <tr><td>11:30 PM</td><td>Production: Exterior Scenes 2</td></tr>
+      <tr><td>12:30 AM</td><td>ADR</td></tr>
+      <tr><td>2:00 AM</td><td>Sleep</td></tr>
+    </table>
+
+    <!-- Sunday Info -->
+    <h2>Sunday – Post-Production</h2>
+    <table>
+      <tr><th>Time</th><th>Task</th></tr>
+      <tr><td>9:00 AM</td><td>Wake Up</td></tr>
+      <tr><td>10:00 AM</td><td>Arrive at Carly’s</td></tr>
+      <tr><td>10:15 AM</td><td>Rough Cut</td></tr>
+      <tr><td>11:15 AM</td><td>Filming the Confessional Scene</td></tr>
+      <tr><td>12:00 PM</td><td>Foley & Sound Design</td></tr>
+      <tr><td>3:30 PM</td><td>Join DMCT Livestream for an Extra Hour on Challenge</td></tr>
+      <tr><td>4:00 PM</td><td>Frantically Re-Recording Peaking Audio and Final Edits</td></tr>
+      <tr><td>4:45 PM</td><td>SUBMISSION!</td></tr>
+      <tr><td>5:00 PM</td><td>FOOD</td></tr>
+    </table>
+
+    <!-- Disclaimer -->
+    <p class="disclaimer">
+      DISCLAIMER: These times aren’t totally accurate — they’re based on the real 48 Hour Film Challenge weekend, but edited for comedic effect and smoother storytelling. The chaos was very real though.
+    </p>
+
+    <!-- Link to our short film (3 min; "Operation: Wardrobe") -->
+    <a
+      href="https://uconn-my.sharepoint.com/:v:/g/personal/shiloh_williamson_uconn_edu/Ebj4fLK_XE5Lo4xffnzprGQBz7tSYPpx53KOTB3zYuS0QQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wYrZiU"
+      target="_blank"
+      >Watch: "Operation: Wardrobe" By Team 2.5 Brains, 1 SD Card </a
+    >
+  </body>
+</html>
