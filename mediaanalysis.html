@@ -1,0 +1,149 @@
+<!-- 
+  AI was used to assist with this project. Shiloh Williamson. Nov/Dec 2025.
+
+  For this specific page:
+  - AI helped me refine spacing and layout of the analysis cards after I built the structure using CSS Grid Generator.
+  - AI also helped fine-tune margins, alignment, and overall visual balance once the preview images and PDF buttons were added.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Media Analysis | Shiloh Williamson</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Connect to CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header class="site-header">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="screenwriting.html">Screenwriting</a></li>
+        <li><a href="production.html">Production</a></li>
+        <li><a href="graphicdesign.html">Graphic Design</a></li>
+        <li><a href="socialmedia.html">Social Media</a></li>
+        <li><a href="webdesign.html">Web Design</a></li>
+        <li><a href="mediaanalysis.html" aria-current="page">Media Analysis</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PAGE TITLE -->
+  <section class="page-header">
+    <h1 class="page-title">Media Analysis</h1>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="analysis-section">
+
+    <!-- SPIDER-MAN (2024) -->
+    <div class="analysis-card">
+
+      <!-- LEFT: Preview + Button -->
+      <div class="analysis-left">
+        <div class="analysis-preview-box">
+          <img src="images/spiderman-preview.jpeg" 
+               alt="Spider-Man Preview" 
+               class="analysis-preview">
+        </div>
+
+        <a href="docsPDFs/spiderman-representationmatters.pdf" 
+           target="_blank" 
+           class="analysis-button">
+          Read PDF
+        </a>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="analysis-right">
+        <h2 class="analysis-title"><em>Spider-Man: Representation Matters (2024)</em></h2>
+        <p class="analysis-description">
+          <b>Description: </b> Produced in the University of North Carolina at Chapel Hill’s MEJO 441 - Diversity and Communication
+          course, this textual analysis examines Marvel’s <em>Spider-Man: Miles Morales</em> (2020), developed by Insomniac Games
+          and published by PlayStation. The essay evaluates how the game portrays Hispanic, Afro-Latino, and Black communities,
+          arguing that its culturally grounded storytelling pushes back against long-standing stereotypes in mass media and
+          allows underrepresented communities to see themselves reflected in an authentic and meaningful way.
+        </p>
+      </div>
+    </div>
+
+    <!-- SEARS (2023) -->
+    <div class="analysis-card">
+
+      <!-- LEFT -->
+      <div class="analysis-left">
+        <div class="analysis-preview-box">
+          <img src="images/sears-preview.jpeg" 
+               alt="Sears Preview" 
+               class="analysis-preview">
+        </div>
+
+        <a href="docsPDFs/sears-usability-test.pdf" 
+           target="_blank"
+           class="analysis-button">
+          Read PDF
+        </a>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="analysis-right">
+        <h2 class="analysis-title"><em>Sears Usability Test & Redesign (2023)</em></h2>
+        <p class="analysis-description">
+          <b>Description: </b> Produced in the University of North Carolina at Chapel Hill’s MEJO 433 - UX Strategy and Design course, this
+          project analyzed the usability of the Sears website through several rounds of user testing, including an unmoderated
+          remote usability test, a rating test, and a card sort exercise. The findings informed a full redesign proposal focused on
+          improving visual hierarchy, navigation, and overall user experience through wireframes and high-fidelity mockups.
+        </p>
+      </div>
+    </div>
+
+    <!-- NAMI × DC (2022) -->
+    <div class="analysis-card">
+
+      <!-- LEFT -->
+      <div class="analysis-left">
+        <div class="analysis-preview-box">
+          <img src="images/namixdc-logo.jpg" 
+               alt="NAMI × DC Preview" 
+               class="analysis-preview">
+        </div>
+
+        <a href="docsPDFs/namixdc.pdf" 
+           target="_blank"
+           class="analysis-button">
+          Read PDF
+        </a>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="analysis-right">
+        <h2 class="analysis-title"><em>NAMI × DC Integrated Marketing Campaign (2022)</em></h2>
+        <p class="analysis-description">
+          <b>Description: </b> Created in the University of North Carolina at Chapel Hill’s MEJO 334 - Visual Design for Strategic
+          Storytelling course, this project imagines a mental-health-focused collaboration between NAMI (National Alliance on
+          Mental Illness) and DC Comics. Using characters from the Batman universe, the campaign aims to reach middle and
+          high school students with accessible mental health resources, presented through bold, character-driven visuals designed
+          to meet young audiences where they already are.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer class="site-footer">
+    <p>© 2025 Shiloh Williamson</p>
+  </footer>
+
+</body>
+</html>

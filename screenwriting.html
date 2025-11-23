@@ -1,0 +1,129 @@
+<!-- 
+  AI was used to assist with this project. Shiloh Williamson. Nov/Dec 2025.
+
+  For this specific page:
+  - Microsoft Copilot helped me clean up the spacing and layout inside the two–column grid (the screenplay cards),
+    just smoothing out proportions and alignment after I built it using CSS Grid Generator.
+  - The “Read Screenplay (PDF)” buttons are normal <a> links styled to look like buttons,
+    following the W3Schools tutorial: https://www.w3schools.com/css/css_link_buttons.asp
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Screenwriting | Shiloh Williamson</title>
+
+  <!-- Loading both fonts (Poppins + Inter) in one Google Fonts link -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Connecting this HTML page to my main CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header class="site-header">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="screenwriting.html" aria-current="page">Screenwriting</a></li>
+        <li><a href="production.html">Production</a></li>
+        <li><a href="graphicdesign.html">Graphic Design</a></li>
+        <li><a href="socialmedia.html">Social Media</a></li>
+        <li><a href="webdesign.html">Web Design</a></li>
+        <li><a href="mediaanalysis.html">Media Analysis</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PAGE TITLE -->
+  <section class="page-header">
+    <h1 class="page-title">Screenwriting</h1>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="screenwriting-section">
+
+    <!-- SCRIPT 1: OPERATION: WARDROBE (NEW FIRST ENTRY) -->
+    <div class="script-card">
+
+      <!-- LEFT SIDE BUTTON -->
+      <div class="script-left">
+        <div class="script-file-box">
+          <a href="docsPDFs/operationwardrobe-screenplay.pdf" target="_blank" class="script-button">
+            Read Screenplay (PDF)
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE TEXT -->
+      <div class="script-right">
+        <h2 class="script-title"><em>OPERATION: WARDROBE (2025)</em></h2>
+
+        <!-- LOGLINE -->
+        <p class="logline" style="margin-bottom: 20px;">
+          <b>Logline: </b> When Avery’s favourite shirt goes missing, her best friend Casey plans an over-the-top heist to help her steal it back.
+        </p>
+      </div>
+    </div>
+
+    <!-- SCRIPT 2: FLEEING -->
+    <div class="script-card">
+
+      <!-- LEFT SIDE BUTTON -->
+      <div class="script-left">
+        <div class="script-file-box">
+          <a href="docsPDFs/fleeing-screenplay.pdf" target="_blank" class="script-button">
+            Read Screenplay (PDF)
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE TEXT -->
+      <div class="script-right">
+        <h2 class="script-title"><em>FLEEING (2025)</em></h2>
+
+        <!-- LOGLINE -->
+        <p class="logline" style="margin-bottom: 20px;">
+          <b>Logline: </b> A terrified man flees through the city, convinced he’s being hunted by assassins from a drug syndicate — 
+          but as his paranoia escalates, it becomes clear there may be more to his story than he's letting on.
+        </p>
+      </div>
+    </div>
+
+    <!-- SCRIPT 3: RESET -->
+    <div class="script-card">
+
+      <!-- LEFT SIDE BUTTON -->
+      <div class="script-left">
+        <div class="script-file-box">
+          <a href="docsPDFs/reset-screenplay.pdf" target="_blank" class="script-button">
+            Read Screenplay (PDF)
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE TEXT -->
+      <div class="script-right">
+        <h2 class="script-title"><em>RESET (2025)</em></h2>
+
+        <!-- LOGLINE -->
+        <p class="logline" style="margin-bottom: 20px;">
+          <b>Logline: </b> Trapped in a nightmarish maze, two boys must complete its challenges and escape — or be reset back to the beginning.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2025 Shiloh Williamson</p>
+  </footer>
+
+</body>
+</html>

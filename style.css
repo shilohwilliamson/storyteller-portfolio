@@ -1,0 +1,930 @@
+/* ============================================================
+   GLOBAL BASE STYLES (COLORS, FONTS, RESET)
+   ============================================================ */
+/* AI-assisted: base design system (colors + typography) structured
+   with help from Microsoft Copilot in VS Code to keep styling consistent. */
+
+:root {
+  --base: #f8f8f8;
+  --ink: #0e0e10;
+  --purple1: #4b2ca3;
+  --purple2: #6a3ac6;
+  --purple3: #8e82f9;
+  --purple4: #321c8b;
+  --title-font: "Poppins", sans-serif;
+  --body-font: "Inter", sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--body-font);
+  color: var(--ink);
+  background: var(--base);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   GLOBAL NAVIGATION BAR (SHARED ACROSS ALL PAGES)
+   ============================================================ */
+/* Standard sticky nav built by hand; blur + transparency choices
+   were refined with AI suggestions in Copilot. */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  border-color: var(--purple3);
+}
+
+/* ============================================================
+   HOME / INDEX PAGE — HERO + ABOUT
+   ============================================================ */
+
+/* HERO SECTION */
+/* AI-assisted animated gradient background:
+   the keyframes + background-size trick were generated with help
+   from Microsoft Copilot, then adjusted to fit the palette. */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  background: linear-gradient(270deg, var(--purple1), var(--purple2), var(--purple3), var(--purple4));
+  background-size: 600% 600%;
+  animation: gradientShift 20s ease infinite;
+}
+
+/* Reusable keyframes also used on the Contact page. */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-title {
+  font-family: var(--title-font);
+  font-weight: 800;
+  font-size: clamp(40px, 7vw, 85px); /* sized so it's not wider than the nav */
+  letter-spacing: 2px;
+}
+
+.hero-subtitle {
+  font-family: var(--title-font);
+  font-weight: 700;
+  font-size: clamp(38px, 6.5vw, 82px);  /* visually matches hero title */
+  color: #d6d3ff;
+  margin-top: -10px;                     /* pulls subtitle closer to title */
+  letter-spacing: 1.5px;
+}
+
+/* Scroll cue button: JS (in script.js) handles the smooth scroll.
+   The shape + hover style was refined with Copilot. */
+.scroll-cue {
+  margin-top: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #d9d6ff;
+  border: 1px solid rgba(217, 214, 255, 0.3);
+  border-radius: 999px;
+  padding: 10px 18px;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.scroll-cue:hover {
+  border-color: #d9d6ff;
+  transform: translateY(2px);
+}
+
+/* ABOUT SECTION UNDER HERO */
+
+.about {
+  background: var(--base);
+  padding: 100px 16px;
+}
+
+.about-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-headshot {
+  border-radius: 50%;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.25);
+}
+
+.about-text h2 {
+  font-family: var(--title-font);
+  color: var(--purple2);
+  margin-bottom: 16px;
+  font-size: 2rem;        /* makes section heading clearly larger */
+  font-weight: 700;
+}
+
+.about-text p {
+  text-align: left;
+  font-size: 18px;
+  color: var(--ink);
+  margin-bottom: 18px; /* space between paragraphs */
+  line-height: 1.7;
+}
+
+/* ============================================================
+   GLOBAL FOOTER (SHARED)
+   ============================================================ */
+
+.site-footer {
+  text-align: center;
+  padding: 18px;
+  border-top: 1px solid #dadada;
+  background: #f1f1f4;
+  font-size: 14px;
+}
+
+/* ============================================================
+   RESPONSIVE ADJUSTMENTS — HOME + NAV
+   ============================================================ */
+
+@media (max-width: 880px) {
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-wrap {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-text p {
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   SCREENWRITING PAGE STYLES
+   ============================================================ */
+
+.page-header {
+  background: #fafafa;
+  padding: 80px 0 40px;
+  text-align: center;
+}
+
+/* Shared page title styling used across inner pages. */
+.page-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+  color: #3c1382; /* purple */
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* Lilac underline under all page titles */
+.page-title::after {
+  content: "";
+  display: block;
+  width: 200px;             /* length of the line */
+  height: 4px;              /* thickness */
+  background: #c9b6ff;      /* lilac */
+  margin: 12px auto 0;      /* spacing + centered line */
+  border-radius: 2px;
+}
+
+.screenwriting-section {
+  width: 85%;
+  max-width: 1200px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* SCREENPLAY CARD LAYOUT
+   Grid layout for "file on left, text on right" used on this page. */
+
+.script-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* LEFT SIDE — PDF BUTTON CONTAINER */
+.script-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card behind the "Read Screenplay" button. */
+.script-file-box {
+  background: #f7f5fb;
+  border: 1px solid #e6e2f1;
+  padding: 40px 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* READ BUTTON */
+.script-button {
+  display: inline-block;
+  padding: 12px 22px;
+  background: #3c1382;
+  color: white;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: 0.2s ease-in-out;
+}
+
+.script-button:hover {
+  background: #5420aa;
+}
+
+/* RIGHT SIDE — TITLE + LOGLINE + DESCRIPTION */
+.script-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.logline {
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.script-description {
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+  max-width: 90%;
+}
+
+/* RESPONSIVE — SCREENWRITING */
+@media (max-width: 800px) {
+  .script-card {
+    grid-template-columns: 1fr;
+  }
+
+  .script-description {
+    max-width: 100%;
+  }
+}
+
+/* ============================================================
+   PRODUCTION PAGE STYLES
+   ============================================================ */
+
+.production-section {
+  width: 85%;
+  max-width: 1200px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* CARD LAYOUT — same grid pattern as Screenwriting. */
+.prod-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* LEFT SIDE: MEDIA */
+/* AI-assisted: aspect-ratio + object-fit were suggested by Copilot
+   as a way to keep video frames 16:9 without distortion. */
+
+.prod-video,
+.prod-audio {
+  width: 100%;
+  border-radius: 10px;
+  background: #f7f5fb;
+  border: 1px solid #e6e2f1;
+}
+
+.prod-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;     /* maintains 1920x1080 feeling */
+  border-radius: 10px;
+  background: #000;
+}
+
+.prod-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* RIGHT SIDE: TEXT */
+.prod-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.prod-description {
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+  max-width: 90%;
+}
+
+.logline {
+  max-width: 90%;
+}
+
+.prod-title,
+.logline {
+  max-width: 90%;
+}
+
+
+/* RESPONSIVE — PRODUCTION */
+@media (max-width: 800px) {
+  .prod-card {
+    grid-template-columns: 1fr;
+  }
+
+  .prod-video,
+  .prod-audio {
+    max-height: unset;
+  }
+}
+
+/* Keep titles, loglines, and descriptions aligned on the right side */
+.prod-title,
+.logline,
+.prod-description {
+  max-width: 90%;
+}
+
+
+/* ============================================================
+   GRAPHIC DESIGN PAGE STYLES
+   ============================================================ */
+
+.design-section {
+  width: 85%;
+  max-width: 1200px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Grid card: preview on left, text on right. */
+.design-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* LEFT — MEDIA BOX (IMAGES + PDF) */
+/* AI-assisted container pattern: keeps different shapes consistent
+   using aspect-ratio and object-fit without manually resizing files. */
+
+.design-media-box {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  border: 1px solid #e6e2f1;
+  background: #f7f5fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px;
+}
+
+/* Aspect ratios for consistent layout regardless of artwork size. */
+.ratio-square {
+  aspect-ratio: 1 / 1;
+}
+
+.ratio-wide {
+  aspect-ratio: 16 / 9;
+}
+
+/* Images always fully visible */
+.design-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* PDF box highlight */
+.pdf-box {
+  background: #e9ddff;
+  border-color: #d3c4ff;
+}
+
+/* PDF BUTTON */
+.design-pdf-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #3c1382;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.design-pdf-button:hover {
+  background-color: #5420aa;
+}
+
+/* RIGHT — TEXT */
+.design-title {
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.design-description {
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+  max-width: 90%;
+}
+
+/* RESPONSIVE — GRAPHIC DESIGN */
+@media (max-width: 800px) {
+  .design-card {
+    grid-template-columns: 1fr;
+  }
+
+  .design-media-box {
+    max-width: 100%;
+  }
+}
+
+/* ============================================================
+   SOCIAL MEDIA PAGE STYLES
+   ============================================================ */
+
+.social-section {
+  width: 85%;
+  max-width: 1200px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Card layout identical to design-card */
+.social-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Media box (videos + images) */
+
+.social-media-box {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  border: 1px solid #e6e2f1;
+  background: #f7f5fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px;
+}
+
+/* Aspect Ratio Helpers for Instagram-style content. */
+.social-square {
+  aspect-ratio: 1 / 1;
+}
+
+.social-wide {
+  aspect-ratio: 16 / 9;
+}
+
+.social-vertical {
+  aspect-ratio: 9 / 16;
+}
+
+/* Videos and Images inside */
+.social-media {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Right side text */
+.social-title {
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.social-description {
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+  max-width: 90%;
+}
+
+/* RESPONSIVE — SOCIAL MEDIA */
+@media (max-width: 800px) {
+  .social-card {
+    grid-template-columns: 1fr;
+  }
+
+  .social-media-box {
+    max-width: 100%;
+  }
+}
+
+/* ============================================================
+   WEB DESIGN PAGE STYLES — FULL-WIDTH CARDS
+   ============================================================ */
+
+/* Layout: preview image at top, then title, description, and button. */
+
+.web-section {
+  width: 85%;
+  max-width: 1100px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Full-width preview images */
+/* AI-assisted: object-position: top ensures important content isn't
+   cropped off the top of the screenshot. Copilot suggested cover+top. */
+
+.web-preview {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid #e6e2f1;
+  background: #f7f5fb;
+  object-fit: cover;
+  max-height: 400px;
+  object-position: top;
+}
+
+/* Titles */
+.web-title {
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  font-size: 2rem;
+  margin-top: 18px;
+  margin-bottom: 12px;
+}
+
+/* Descriptions */
+.web-description {
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+  max-width: 90%;
+  margin-bottom: 24px;
+}
+
+/* Button */
+.web-button {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #3c1382;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.web-button:hover {
+  background-color: #5420aa;
+}
+
+/* RESPONSIVE — WEB DESIGN */
+@media (max-width: 850px) {
+  .web-description {
+    max-width: 100%;
+  }
+}
+
+/* ============================================================
+   MEDIA ANALYSIS PAGE STYLES
+   ============================================================ */
+
+.analysis-section {
+  width: 85%;
+  max-width: 1200px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* CARD LAYOUT: preview + button on left, text on right. */
+.analysis-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* LEFT SIDE — CONTAINER FOR PREVIEW + BUTTON */
+
+.analysis-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* AI-assisted pattern reused from Graphic Design:
+   this keeps PDF preview thumbnails consistent. */
+
+.analysis-file-box {
+  background: #f7f5fb;
+  border: 1px solid #e6e2f1;
+  padding: 40px 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* Preview box for the screenshot image above the button. */
+.analysis-preview-box {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  border: 1px solid #e6e2f1;
+  background: #f7f5fb;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.analysis-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* PDF BUTTON */
+.analysis-button {
+  display: inline-block;
+  padding: 12px 22px;
+  background: #3c1382;
+  color: white;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: 0.2s ease-in-out;
+  margin-top: 18px;   /* extra spacing between text and button */
+}
+
+.analysis-button:hover {
+  background: #5420aa;
+}
+
+/* RIGHT SIDE TEXT */
+.analysis-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.analysis-description {
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+  max-width: 90%;
+}
+
+/* RESPONSIVE — MEDIA ANALYSIS */
+@media (max-width: 800px) {
+  .analysis-card {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-description {
+    max-width: 100%;
+  }
+}
+
+/* ============================================================
+   CONTACT PAGE STYLES
+   ============================================================ */
+
+/* CONTACT PAGE — uses the SAME animated gradient as the home hero.
+   AI-assisted: this background + flex layout were created with help
+   from Microsoft Copilot to keep the page full-height and cinematic. */
+
+.contact-body {
+  background: linear-gradient(270deg, var(--purple1), var(--purple2), var(--purple3), var(--purple4));
+  background-size: 600% 600%;
+  animation: gradientShift 20s ease infinite;
+  min-height: 100vh;
+  color: white;
+
+  /* Makes the whole page a column so the footer sits at the bottom. */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content grid: headshot on left, info on right. */
+.contact-section {
+  width: 85%;
+  max-width: 1300px;
+  margin: 120px auto;
+  display: grid;
+  grid-template-columns: 0.8fr 1.5fr;
+  gap: 60px;
+  align-items: center;
+
+  /* Let this grow so the footer stays pinned to the window bottom. */
+  flex: 1;
+}
+
+/* LEFT SIDE — CIRCULAR HEADSHOT */
+.contact-headshot {
+  width: 330px;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #d8c9ff;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+}
+
+/* RIGHT SIDE — TEXT + TAGLINE */
+.contact-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+/* Tagline spans full width and has an underline to separate it
+   from the contact info cards. */
+.contact-tagline {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  line-height: 1.6;
+  width: 100%;
+  max-width: none;
+  display: block;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #d8c4ff;   /* lilac underline */
+}
+
+/* CONTACT BOX — individual info tiles. */
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* AI-assisted small card style for hover and blur. */
+.contact-item {
+  background: rgba(255, 255, 255, 0.14);
+  padding: 16px 22px;
+  border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  transition: 0.25s ease;
+  backdrop-filter: blur(4px);
+  color: white;
+}
+
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-3px);
+}
+
+.contact-link {
+  text-decoration: none;
+  color: white;
+}
+
+/* RESPONSIVE — CONTACT */
+@media (max-width: 850px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .contact-headshot {
+    margin: 0 auto;
+  }
+
+  .contact-box {
+    align-items: center;
+  }
+}
+
+/* ADDS ONS: ALl the additional code I had to add to retroactively fix stuff I didn't like */
+
+
+/* ===== UNIVERSAL SPACING + ALIGNMENT FOR ALL RIGHT-SIDE TEXT ===== */
+/* This makes all titles + descriptions line up cleanly
+   and prevents the text from stretching too wide across the card */
+
+.script-title,
+.script-description,
+.logline,
+.prod-title,
+.prod-description,
+.design-title,
+.design-description,
+.social-title,
+.social-description,
+.web-title,
+.web-description,
+.analysis-title,
+.analysis-description {
+  max-width: 90%;   /* keeps text from hitting the edge */
+  margin-left: 0;   /* keeps all text flush-left */
+}
+
+/* Add comfortable spacing between title → description everywhere */
+.script-title,
+.prod-title,
+.design-title,
+.social-title,
+.web-title,
+.analysis-title {
+  margin-bottom: 12px;    /* adjust if you want more space */
+}
+
+.analysis-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;   /* centers both the image + button */
+  text-align: center;    /* optional but keeps things tidy */
+}
+

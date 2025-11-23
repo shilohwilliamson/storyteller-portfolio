@@ -1,0 +1,110 @@
+<!-- 
+AI was used to assist with this project. 
+Shiloh Williamson. Nov/Dec 2025.
+
+For this page, AI assistance was used to:
+- Refine and smooth the CSS gradient background animation.
+- Generate the JavaScript needed for the scroll-down button functionality.
+- Adjust layout, spacing, and fine-tune visual alignment after the initial code was created.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shiloh Williamson | Storyteller</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="screenwriting.html">Screenwriting</a></li>
+        <li><a href="production.html">Production</a></li>
+        <li><a href="graphicdesign.html">Graphic Design</a></li>
+        <li><a href="socialmedia.html">Social Media</a></li>
+        <li><a href="webdesign.html">Web Design</a></li>
+        <li><a href="mediaanalysis.html">Media Analysis</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+
+      <!-- UPDATED FONT SIZES -->
+      <h1 class="hero-title">SHILOH WILLIAMSON</h1>
+      <h2 class="hero-subtitle">Storyteller</h2>
+
+      <!-- SCROLL BUTTON -->
+      <button class="scroll-cue" data-scroll-target="#about" aria-label="Scroll Down">
+        <svg width="22" height="30" viewBox="0 0 22 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 2v22M11 24l-6-6M11 24l6-6" 
+                stroke="currentColor" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                stroke-linejoin="round"/>
+        </svg>
+        <span>Scroll</span>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="about-wrap">
+
+      <!-- SHILOH WILLIAMSON HEADSHOT -->
+      <img src="https://media.licdn.com/dms/image/v2/D4E03AQGmvvABOEkLDQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1715136000505?e=1764806400&v=beta&t=6dD77o7ElrxuZd9oTn6KGIlP7OoRFgjsAZtFAN-o2mo" 
+           alt="Headshot of Shiloh Williamson" 
+           class="about-headshot" 
+           width="320" 
+           height="320">
+
+      <div class="about-text">
+        <h2>My Storytelling Journey</h2>
+
+        <p>
+          Coming originally from a STEM background, I’ve learned to combine the creative with the analytical in what I believe is a balanced approach that defines how I see storytelling today. I first discovered my passion for the craft while studying at the University of North Carolina at Chapel Hill, which led me to continue my education at the University of Connecticut’s Digital Media & Design program. Between both experiences, I’ve learned to think creatively and strategically about how stories are made and shared with audiences. Diversity of perspective has been my biggest teacher and continues to guide how I approach my work.
+        </p>
+
+        <p>
+          My goal is to keep telling stories that reach and resonate with audiences — whether through film, writing, design, or other digital media projects. I want to help create work that connects people, sparks emotion, and reflects the many ways we experience the world — stories that people see themselves in, that make them feel understood, or that offer a new way of looking at the world.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2025 Shiloh Williamson</p>
+  </footer>
+
+ <!-- WORKING SCROLL BUTTON
+    This little JS chunk basically handles my “scroll down” button. 
+    When I click the button, it looks at the data-scroll-target attribute 
+    (which is just pointing to the #about section), and then it smoothly 
+    scrolls the page down to that spot. AI helped me figure out the logic 
+    and clean formatting for this. -->
+  <script>
+    document.querySelectorAll("[data-scroll-target]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-scroll-target");
+        document.querySelector(target).scrollIntoView({ behavior: "smooth" });
+      });
+    });
+  </script>
+
+</body>
+</html>
