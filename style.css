@@ -948,3 +948,14 @@ body {
   display: block;
 }
 
+/* FORCE HEADSHOT SIZE (temporary) */
+img.about-headshot{
+  width: 320px !important;
+  height: 320px !important;
+  object-fit: cover !important;
+  border-radius: 12px !important;
+  max-width: none !important;
+  display: block !important;
+}
+
+
