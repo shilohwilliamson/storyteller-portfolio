@@ -145,10 +145,15 @@ body {
   align-items: center;
 }
 
-.about-headshot {
-  border-radius: 50%;
+.about-headshot{
+  width: 320px;
+  height: 320px;
+  border-radius: 18px;
+  object-fit: cover;
   box-shadow: 0 10px 32px rgba(0, 0, 0, 0.25);
+  display: block;
 }
+
 
 
 .about-text h2 {
@@ -813,14 +818,15 @@ body {
 }
 
 /* LEFT SIDE — CIRCULAR HEADSHOT */
-.contact-headshot {
+.contact-headshot{
   width: 330px;
   height: 330px;
+  border-radius: 18px;
   object-fit: cover;
-  border-radius: 50%;
   border: 5px solid #d8c9ff;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
 }
+
 
 /* RIGHT SIDE — TEXT + TAGLINE */
 .contact-title {
@@ -927,25 +933,6 @@ body {
   gap: 16px;
   align-items: center;   /* centers both the image + button */
   text-align: center;    /* optional but keeps things tidy */
-}
-
-.about-headshot{
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.25);
-  display: block;
-}
-
-/* FORCE HEADSHOT SIZE (temporary) */
-img.about-headshot{
-  width: 320px !important;
-  height: 320px !important;
-  object-fit: cover !important;
-  border-radius: 12px !important;
-  max-width: none !important;
-  display: block !important;
 }
 
 
